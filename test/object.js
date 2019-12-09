@@ -28,6 +28,7 @@ t.test('empty and non-string targets', async t => {
     false: false,
     null: null,
     array: [1,2,3],
+    func: function () {},
   } }
   const expect = { name: 'hello', version: 'world', bin: {
     x: 'x.js',
@@ -41,6 +42,7 @@ t.test('slashy object', async t => {
     '/path/foo': '/etc/passwd',
     'bar': '/etc/passwd',
     '/etc/glorb/baz': '/etc/passwd',
+    '/etc/passwd:/bin/usr/exec': '/etc/passwd',
   } }
   const expect = {
     name: 'hello',
@@ -49,6 +51,7 @@ t.test('slashy object', async t => {
       foo: 'etc/passwd',
       bar: 'etc/passwd',
       baz: 'etc/passwd',
+      exec: 'etc/passwd',
     }
   }
   t.strictSame(normalize(pkg), expect)
