@@ -14,6 +14,7 @@ t.test('benign object', async t => {
     a: 'a',
   } }
   t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
 t.test('empty and non-string targets', async t => {
@@ -32,6 +33,7 @@ t.test('empty and non-string targets', async t => {
     x: 'x.js',
   } }
   t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
 t.test('slashy object', async t => {
@@ -50,6 +52,7 @@ t.test('slashy object', async t => {
     }
   }
   t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
 t.test('dotty object', async t => {
@@ -70,12 +73,14 @@ t.test('dotty object', async t => {
     z: 'xyz',
   } }
   t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
 t.test('weird object', async t => {
   const pkg = { name: 'hello', version: 'world', bin: /asdf/ }
   const expect = { name: 'hello', version: 'world' }
   t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
 t.test('oddball keys', async t => {
@@ -104,7 +109,7 @@ t.test('oddball keys', async t => {
     }
   }
 
-  t.strictSame(normalize(pkg), {
+  const expect = {
     bin: {
       '~': 'target',
       '£': 'target',
@@ -126,5 +131,8 @@ t.test('oddball keys', async t => {
       'ссср': 'target',
       '君の名は': 'target',
     },
-  })
+  }
+
+  t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
