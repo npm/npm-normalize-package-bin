@@ -28,3 +28,10 @@ t.test('double path', async t => {
   t.strictSame(normalize(pkg), expect)
   t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
+
+t.test('string with no name', async t => {
+  const pkg = { bin: 'foobar.js' }
+  const expect = {}
+  t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+})

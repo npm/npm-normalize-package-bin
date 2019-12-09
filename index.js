@@ -10,6 +10,8 @@ const normalize = pkg =>
   : removeBin(pkg)
 
 const normalizeString = pkg => {
+  if (!pkg.name)
+    return removeBin(pkg)
   pkg.bin = { [pkg.name]: pkg.bin }
   return normalizeObject(pkg)
 }
