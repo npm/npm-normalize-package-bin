@@ -5,6 +5,9 @@
   "repository": "git+https://github.com/npm/npm-normalize-package-bin",
   "author": "Isaac Z. Schlueter <i@izs.me> (https://izs.me)",
   "license": "ISC",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "tap",
     "snap": "tap",
