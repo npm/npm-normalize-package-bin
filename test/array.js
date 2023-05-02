@@ -39,3 +39,10 @@ t.test('dotty array', async t => {
   t.strictSame(normalize(pkg), expect)
   t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
+
+t.test('dotty array with backslashes', async t => {
+  const pkg = { name: 'hello', version: 'world', bin: ['..\\..\\..\\..\\etc\\passwd'] }
+  const expect = { name: 'hello', version: 'world', bin: { passwd: 'etc/passwd' } }
+  t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+})
