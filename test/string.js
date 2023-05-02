@@ -22,6 +22,13 @@ t.test('dotty string', async t => {
   t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
+t.test('dotty string with backslashes', async t => {
+  const pkg = { name: 'hello', version: 'world', bin: '..\\..\\..\\..\\etc\\passwd' }
+  const expect = { name: 'hello', version: 'world', bin: { hello: 'etc/passwd' } }
+  t.strictSame(normalize(pkg), expect)
+  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+})
+
 t.test('double path', async t => {
   const pkg = { name: 'hello', version: 'world', bin: '/etc/passwd:/bin/usr/exec' }
   const expect = { name: 'hello', version: 'world', bin: { hello: 'etc/passwd:/bin/usr/exec' } }
