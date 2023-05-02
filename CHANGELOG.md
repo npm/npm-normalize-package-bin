@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.1](https://github.com/npm/npm-normalize-package-bin/compare/v3.0.0...v3.0.1) (2023-05-02)
+
+### Bug Fixes
+
+* [`1ebb83b`](https://github.com/npm/npm-normalize-package-bin/commit/1ebb83b091ccfd7d7f9ec8432d627ef57265f553) [#41](https://github.com/npm/npm-normalize-package-bin/pull/41) apply slash normalizer before bin path join (#41) (@antongolub)
+
 ## [3.0.0](https://github.com/npm/npm-normalize-package-bin/compare/v2.0.0...v3.0.0) (2022-10-10)
 
 ### ⚠️ BREAKING CHANGES
