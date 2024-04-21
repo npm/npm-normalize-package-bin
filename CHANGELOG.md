@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/npm/npm-normalize-package-bin/compare/v3.0.1...v3.0.2) (2024-04-21)
+
+### Chores
+
+* [`c66b387`](https://github.com/npm/npm-normalize-package-bin/commit/c66b387a882578e10ca97d362264dab6979ac15f) [#75](https://github.com/npm/npm-normalize-package-bin/pull/75) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`f57d567`](https://github.com/npm/npm-normalize-package-bin/commit/f57d5671e1d7601752332b45bdf6e1b83969beaf) [#75](https://github.com/npm/npm-normalize-package-bin/pull/75) bump @npmcli/template-oss from 4.21.3 to 4.21.4 (@dependabot[bot])
+
 ## [3.0.1](https://github.com/npm/npm-normalize-package-bin/compare/v3.0.0...v3.0.1) (2023-05-02)
 
 ### Bug Fixes
