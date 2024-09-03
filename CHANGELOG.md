@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.0.0](https://github.com/npm/npm-normalize-package-bin/compare/v3.0.1...v4.0.0) (2024-09-03)
+### ⚠️ BREAKING CHANGES
+* `npm-normalize-package-bin` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`a1c7cb8`](https://github.com/npm/npm-normalize-package-bin/commit/a1c7cb8015043ab527f1557197d017251141d63d) [#89](https://github.com/npm/npm-normalize-package-bin/pull/89) align to npm 10 node engine range (@hashtagchris)
+### Chores
+* [`cf43a5d`](https://github.com/npm/npm-normalize-package-bin/commit/cf43a5d29f2f10f1a8f19b1e08c8dd3e0dfb23a6) [#89](https://github.com/npm/npm-normalize-package-bin/pull/89) run template-oss-apply (@hashtagchris)
+* [`a2e246b`](https://github.com/npm/npm-normalize-package-bin/commit/a2e246b5a62c8ad99d88997b30678062b7c20bd2) [#87](https://github.com/npm/npm-normalize-package-bin/pull/87) bump @npmcli/eslint-config from 4.0.5 to 5.0.0 (@dependabot[bot])
+* [`1799d4b`](https://github.com/npm/npm-normalize-package-bin/commit/1799d4b2acdc59df8c26ce5faee339694dcc59df) [#77](https://github.com/npm/npm-normalize-package-bin/pull/77) bump @npmcli/template-oss to 4.22.0 (@lukekarrys)
+* [`65d9e5f`](https://github.com/npm/npm-normalize-package-bin/commit/65d9e5f27483bb15c2932dd5dbcc2345db257cf5) [#88](https://github.com/npm/npm-normalize-package-bin/pull/88) postinstall for dependabot template-oss PR (@hashtagchris)
+* [`34b5912`](https://github.com/npm/npm-normalize-package-bin/commit/34b5912d7ffc40bd2d35bce3f529b272a65af820) [#88](https://github.com/npm/npm-normalize-package-bin/pull/88) bump @npmcli/template-oss from 4.23.1 to 4.23.3 (@dependabot[bot])
+
 ## [3.0.1](https://github.com/npm/npm-normalize-package-bin/compare/v3.0.0...v3.0.1) (2023-05-02)
 
 ### Bug Fixes
