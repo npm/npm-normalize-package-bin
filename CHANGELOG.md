@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.0.0](https://github.com/npm/npm-normalize-package-bin/compare/v4.0.0...v5.0.0) (2025-10-22)
+### ⚠️ BREAKING CHANGES
+* align to npm 11 node engine range (#99)
+### Bug Fixes
+* [`d0ab675`](https://github.com/npm/npm-normalize-package-bin/commit/d0ab675dc89b39d7e132d1c6c4e9d08bd1ea2182) [#99](https://github.com/npm/npm-normalize-package-bin/pull/99) align to npm 11 node engine range (#99) (@owlstronaut)
+### Chores
+* [`9b7b39a`](https://github.com/npm/npm-normalize-package-bin/commit/9b7b39a244949e8d835abb6461a4578cd1422a07) [#93](https://github.com/npm/npm-normalize-package-bin/pull/93) postinstall workflow updates (#93) (@owlstronaut)
+* [`19a6ff9`](https://github.com/npm/npm-normalize-package-bin/commit/19a6ff9761108d8d2a2decd1fd2546adc9290e44) [#98](https://github.com/npm/npm-normalize-package-bin/pull/98) bump @npmcli/template-oss from 4.26.0 to 4.27.1 (#98) (@dependabot[bot], @npm-cli-bot)
+
 ## [4.0.0](https://github.com/npm/npm-normalize-package-bin/compare/v3.0.1...v4.0.0) (2024-09-03)
 ### ⚠️ BREAKING CHANGES
 * `npm-normalize-package-bin` now supports node `^18.17.0 || >=20.5.0`
