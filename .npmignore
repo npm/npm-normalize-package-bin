@@ -1,0 +1,11 @@
+# Test files
+test/
+*.test.js
+*.spec.js
+__tests__/
+coverage/
+
+# Development files
+.nyc_output/
+.tap/
+node_modules/
