@@ -1,7 +1,8 @@
 const normalize = require('../')
-const t = require('tap')
+const { test } = require('node:test')
+const assert = require('node:assert')
 
-t.test('benign array', async t => {
+test('benign array', async () => {
   const pkg = { name: 'hello', version: 'world', bin: ['./x/y', 'y/z', './a'] }
   const expect = { name: 'hello',
     version: 'world',
@@ -10,11 +11,11 @@ t.test('benign array', async t => {
       z: 'y/z',
       a: 'a',
     } }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('conflicting array', async t => {
+test('conflicting array', async () => {
   const pkg = { name: 'hello', version: 'world', bin: ['./x/y', 'z/y', './a'] }
   const expect = { name: 'hello',
     version: 'world',
@@ -22,27 +23,27 @@ t.test('conflicting array', async t => {
       y: 'z/y',
       a: 'a',
     } }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('slashy array', async t => {
+test('slashy array', async () => {
   const pkg = { name: 'hello', version: 'world', bin: ['/etc/passwd'] }
   const expect = { name: 'hello', version: 'world', bin: { passwd: 'etc/passwd' } }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('dotty array', async t => {
+test('dotty array', async () => {
   const pkg = { name: 'hello', version: 'world', bin: ['../../../../etc/passwd'] }
   const expect = { name: 'hello', version: 'world', bin: { passwd: 'etc/passwd' } }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('dotty array with backslashes', async t => {
+test('dotty array with backslashes', async () => {
   const pkg = { name: 'hello', version: 'world', bin: ['..\\..\\..\\..\\etc\\passwd'] }
   const expect = { name: 'hello', version: 'world', bin: { passwd: 'etc/passwd' } }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })

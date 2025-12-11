@@ -1,7 +1,8 @@
 const normalize = require('../')
-const t = require('tap')
+const { test } = require('node:test')
+const assert = require('node:assert')
 
-t.test('benign object', async t => {
+test('benign object', async () => {
   // just clean up the ./ in the targets and remove anything weird
   const pkg = { name: 'hello',
     version: 'world',
@@ -17,11 +18,11 @@ t.test('benign object', async t => {
       z: 'y/z',
       a: 'a',
     } }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('empty and non-string targets', async t => {
+test('empty and non-string targets', async () => {
   // just clean up the ./ in the targets and remove anything weird
   const pkg = { name: 'hello',
     version: 'world',
@@ -41,11 +42,11 @@ t.test('empty and non-string targets', async t => {
     bin: {
       x: 'x.js',
     } }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('slashy object', async t => {
+test('slashy object', async () => {
   const pkg = { name: 'hello',
     version: 'world',
     bin: {
@@ -64,11 +65,11 @@ t.test('slashy object', async t => {
       exec: 'etc/passwd',
     },
   }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('dotty object', async t => {
+test('dotty object', async () => {
   const pkg = {
     name: 'hello',
     version: 'world',
@@ -87,18 +88,18 @@ t.test('dotty object', async t => {
       C: 'super safe programming language',
       z: 'xyz',
     } }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('weird object', async t => {
+test('weird object', async () => {
   const pkg = { name: 'hello', version: 'world', bin: /asdf/ }
   const expect = { name: 'hello', version: 'world' }
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
 
-t.test('oddball keys', async t => {
+test('oddball keys', async () => {
   const pkg = {
     bin: {
       '~': 'target',
@@ -147,6 +148,6 @@ t.test('oddball keys', async t => {
     },
   }
 
-  t.strictSame(normalize(pkg), expect)
-  t.strictSame(normalize(normalize(pkg)), expect, 'double sanitize ok')
+  assert.deepStrictEqual(normalize(pkg), expect)
+  assert.deepStrictEqual(normalize(normalize(pkg)), expect, 'double sanitize ok')
 })
