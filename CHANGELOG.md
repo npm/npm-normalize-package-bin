@@ -1,5 +1,19 @@
 # Changelog
 
+## [6.0.0](https://github.com/npm/npm-normalize-package-bin/compare/v5.0.0...v6.0.0) (2026-05-08)
+### ⚠️ BREAKING CHANGES
+* `npm-normalize-package-bin` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+* template-oss-apply
+### Features
+* [`a2f7fd4`](https://github.com/npm/npm-normalize-package-bin/commit/a2f7fd404862919278f9b4195f22a6d84d0b38e5) [#111](https://github.com/npm/npm-normalize-package-bin/pull/111) bump to new node engine range (@owlstronaut)
+* [`ae12958`](https://github.com/npm/npm-normalize-package-bin/commit/ae1295874fa5d0dd6e480c7c4e5935e1dc5655fd) [#111](https://github.com/npm/npm-normalize-package-bin/pull/111) template-oss-apply (@owlstronaut)
+### Chores
+* [`9261a16`](https://github.com/npm/npm-normalize-package-bin/commit/9261a16117ccdc0bb5c2d467c6a2104c82cc9efb) [#111](https://github.com/npm/npm-normalize-package-bin/pull/111) template-oss-apply (@owlstronaut)
+* [`4e4caac`](https://github.com/npm/npm-normalize-package-bin/commit/4e4caac8b5f58729bcc675dfd6384b89f028c5fc) [#106](https://github.com/npm/npm-normalize-package-bin/pull/106) remove tap (@owlstronaut)
+* [`af3638b`](https://github.com/npm/npm-normalize-package-bin/commit/af3638b2b85ec170747887399a61d4dfc6d5379e) [#106](https://github.com/npm/npm-normalize-package-bin/pull/106) swap from tap to built-in node:test (@owlstronaut)
+* [`863d9e4`](https://github.com/npm/npm-normalize-package-bin/commit/863d9e4dfd6f3097442f503baffb8e1a0b4ac0c9) [#101](https://github.com/npm/npm-normalize-package-bin/pull/101) bump @npmcli/eslint-config from 5.1.0 to 6.0.0 (#101) (@dependabot[bot])
+* [`c924a8e`](https://github.com/npm/npm-normalize-package-bin/commit/c924a8eadabee83d3d121ef0e85269aa3f93797f) [#109](https://github.com/npm/npm-normalize-package-bin/pull/109) bump @npmcli/template-oss from 4.29.0 to 4.30.0 (#109) (@dependabot[bot], @npm-cli-bot)
+
 ## [5.0.0](https://github.com/npm/npm-normalize-package-bin/compare/v4.0.0...v5.0.0) (2025-10-22)
 ### ⚠️ BREAKING CHANGES
 * align to npm 11 node engine range (#99)
